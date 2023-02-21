@@ -1,0 +1,87 @@
+.person-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .name{
+        margin-top: 12px;
+        font-family: $mainFont;
+        font-size: 2rem;
+        color: $mainColor;
+        margin-bottom: 12px;
+    }
+    .image{
+        margin-bottom: 12px;
+        img{
+            border-radius: 15px;
+            max-width: 90vw;
+        }
+    }
+    .info{
+        font-family: $fontThin;
+        color: $accentColor;
+        font-size: 1.3rem;
+    }
+    .bio{
+        margin-top: 12px;
+        font-family: $fontThin;
+        color: $accentColor;
+        font-size: 1.15rem;
+        max-width: 90vw;
+    }
+    #bio-overflow{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+                line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+    .section{
+        font-size: 1.2rem;
+        font-family: $mainFont;
+        color: $mainColor;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .subsection{
+        font-size: 1.1rem;
+        font-family: $fontThin;
+        color: $accentColor;
+        margin-bottom: 12px;
+    }
+    .container{
+        display: flex;
+        gap: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        align-items: center;
+        overflow-x: scroll;
+        max-width: 100%;
+        text-align: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;  
+        img{
+            border-radius: 15px;
+            height: 200px;
+            width: auto;
+        }
+        .item{
+            padding: 10px;
+            min-height: 250px;
+            p{
+                font-family: $fontThin;
+                color: $accentColor;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                        line-clamp: 1; 
+                -webkit-box-orient: vertical;
+            }
+            .title{
+                font-family: $mainFont;
+            }
+        }
+    }
+}

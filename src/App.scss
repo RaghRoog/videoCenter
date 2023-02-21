@@ -1,1 +1,25 @@
-@import './scss/resets', './scss/variables', './scss/home', './scss/navbar', './scss/homeSection'
+@import './scss/variables', './scss/resets', './scss/home', './scss/navbar', './scss/homeSection',
+'./scss/search', './scss/searchedItem', './scss/detailsPage', './scss/seasonDetails', './scss/personDetails';
+
+footer{
+    background-color: #0d253f;
+    color: #90cea1;
+    font-family: $mainFont;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 2.5rem;
+    img{
+        height: 75px;
+        width: auto;
+    }
+}
+
+//mobile
+@media screen and (max-width: 900px){
+    footer{
+        flex-direction: column;
+    }
+}

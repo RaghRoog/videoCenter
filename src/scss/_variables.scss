@@ -3,6 +3,11 @@ $mainColorOpacity: rgba(194, 5, 52, 0.459);
 $accentColor: rgb(16, 108, 145);
 $accentColorOpacity: rgba(16, 109, 145, 0.459);
 $accentColorHover: rgb(10, 78, 105);
+$bgHover: rgb(232, 232, 232);
+$gap: 12px;
+$shadow: 2px 2px 14px 2px lightgray;
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
 $mainFont: 'Anton', sans-serif;
+$fontThin: 'Antonio', sans-serif;

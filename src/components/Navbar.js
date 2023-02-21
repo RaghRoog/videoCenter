@@ -1,39 +1,33 @@
 import { displayContainer, containerDisplayNone } from "../functions/changeContainerDisplay"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import search from "../functions/search"
 
 export default function Navbar() {
 
-
+    let apiKey = process.env.REACT_APP_API_KEY
+    let navigate = useNavigate()
+    let [searchInput, setSearchInput] = useState('')
+    let handleSearch = () => {
+        if(searchInput.length > 0){
+            localStorage.setItem('query', searchInput)
+            search(apiKey, searchInput, 1)
+             .then(result => {
+                localStorage.setItem('searchData', JSON.stringify(result))
+                navigate('/search')
+            })
+        }
+    }
 
     return(
         <div className="navbar">
             <p className="title">VideoCenter</p>
-            <div className="nav-container">
-                <div onMouseEnter={()=>displayContainer('films')} 
-                     onMouseLeave={()=>containerDisplayNone('films')}  
-                     className="nav-item">Movies
-                    <div id='films' className="nav-selector-container">
-                        <div className="selector-item">Popular</div>
-                        <div className="selector-item">Upcoming</div>
-                        <div className="selector-item">Top rated</div>
-                    </div>
-                </div>
-                <div onMouseEnter={()=>displayContainer('tv-shows')}
-                     onMouseLeave={()=>containerDisplayNone('tv-shows')}
-                     className="nav-item">TV shows
-                    <div id='tv-shows' className="nav-selector-container">
-                        <div className="selector-item">Popular</div>
-                        <div className="selector-item">Top rated</div>
-                    </div>
-                </div>
-                <div onMouseEnter={()=>displayContainer('people')} 
-                     onMouseLeave={()=>containerDisplayNone('people')}
-                     className="nav-item">People
-                    <div id='people' className="nav-selector-container">
-                        <div className="selector-item">Popular people</div>
-                    </div>
-                </div>
+            <div className="search-container">
+                <input onChange={(event) => setSearchInput(event.target.value)} 
+                        type="text" name="search" 
+                        id="search" placeholder="search..."/>
+                <button onClick={()=>handleSearch()}>Search</button>
             </div>
-            <div className="account-image"></div>
         </div>
     )
 }

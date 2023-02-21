@@ -1,0 +1,201 @@
+.details-page{
+    .section-title{
+        color: white;
+        font-family: $mainFont;
+        font-size: 1.5rem;
+    }
+    width: 100vw;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 32px;
+
+    .container{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        width: min(900px, 90vw);
+        background-color: rgba(0, 0, 0, 0.457);
+        padding: 12px;
+        border-radius: 15px;
+        
+        .poster{
+            width: fit-content;
+            img{
+                width: 250px;
+                border-radius: 15px;
+            }
+        }
+
+        .right{
+            margin-top: 64px;
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+
+            .title{
+                font-family: $mainFont;
+                color: white;
+                font-size: 2rem;
+            }
+    
+            .info{
+                color: white;
+                font-family: $fontThin;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                align-items: center;
+            }
+        }
+
+        .bottom{
+            color: white;
+            font-family: $fontThin;
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            
+            div{
+                padding-right: 12px;
+                display: flex;
+                flex-direction: column;
+                
+                p{
+                    &:first-child{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .overview, .episodes-info{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.457);
+        width: min(1400px, 90vw);
+        padding: 12px;
+        border-radius: 15px;
+
+        p{
+            font-family: $fontThin;
+            font-size: 1.25rem;
+           
+            &:first-child{
+                font-family: $mainFont;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .cast-crew{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        P:first-child{
+            font-family: $mainFont;
+            font-size: 1.5rem;
+        }
+
+        .cast-crew-container{
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            overflow-x: scroll;
+            max-width: 100%;
+            -ms-overflow-style: none;
+            scrollbar-width: none; 
+            padding-left: 12px;
+            padding-right: 12px;
+            
+            .cast-crew-item{
+                background-color: rgba(0, 0, 0, 0.457);
+                border-radius: 15px;
+                padding: 10px;
+                min-height: 250px;
+                .image{
+                    img{
+                        width: 100px;
+                        height: auto;
+                        border-radius: 15px;
+                    }
+                }
+                .name{
+                    font-family: $mainFont;
+                }
+                p:last-child{
+                    font-family: $fontThin;
+                }
+            }
+        }
+    }
+    .seasons{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        .seasons-container{
+            padding-left: 12px;
+            padding-right: 12px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            overflow-x: scroll;
+            max-width: 100%;
+            -ms-overflow-style: none;
+            scrollbar-width: none; 
+            p{
+                font-family: $fontThin;
+                color: white;
+                &:first-child{
+                    font-family: $mainFont;
+                }
+            }
+            .seasons-item{
+                background-color: rgba(0, 0, 0, 0.457);
+                border-radius: 15px;
+                padding: 10px;
+                img{
+                    border-radius: 15px;
+                    height: 200px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+
+
+//mobile
+@media screen and (max-width: 900px){
+    .details-page{
+        .container{
+            flex-direction: column;
+            
+            .right{
+                margin-top: 6px;
+                align-self: center;
+
+                .title{
+                    text-align: center;
+                }
+
+                .info{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

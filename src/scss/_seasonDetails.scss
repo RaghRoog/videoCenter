@@ -1,0 +1,67 @@
+.season-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap;
+    .season-name{
+        font-family: $mainFont;
+        margin-top: 24px;
+        font-size: 2rem;
+        color: $mainColor;
+    }
+    .overview, .air-date{
+        max-width: 90vw;
+        font-family: $fontThin;
+        color: $accentColor;
+        font-size: 1.5rem;
+    }
+    .poster{
+        img{
+            width: min(200px, 90vw);
+            height: auto;
+            border-radius: 15px;
+        }
+    }
+    .episode{
+        .episode-img{
+            img{
+                max-width: 100%;
+                height: auto;
+                border-radius: 15px;
+            }
+        }
+        .name, .section{
+            font-family: $mainFont;
+            color: $mainColor;
+        }
+        p, span{
+            font-family: $fontThin;
+            color: $accentColor;
+        }
+        p:first-child{
+            font-size: 1.5rem;
+        }
+        width: 90vw;
+        box-shadow: $shadow;
+        padding: 12px;
+        border-radius: 15px;
+        .image{
+            img{
+                width: 100px;
+                height: auto;
+                border-radius: 15px;
+            }
+        }
+        .container{
+            display: none;
+            padding-left: 12px;
+            padding-right: 12px;
+            gap: 12px;
+            align-items: flex-start;
+            overflow-x: scroll;
+            max-width: 100%;
+            -ms-overflow-style: none;
+            scrollbar-width: none; 
+        }
+    }
+}
